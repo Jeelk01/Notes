@@ -56,5 +56,7 @@
 // to set a request header in fetch , we can use then headers option
 
 
-// -------------------- Post request --------------------
+// in JS engine 
+// fetch have special queue(micro task queue - priority queue - fetch queue) having a special priority.
+// first fetch then settieout then other work
 

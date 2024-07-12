@@ -76,13 +76,18 @@
 // used for clean ups ( closing the files , exit the loop , )
 // when there is error in catch also then finally is useful.
 
-try{7
-    console.log('Runs Successfully');
-    console.log(x);
-}
-catch{
-    console.log("Error successfully");
-}
-finally{
-    console.log("Finnaly");
+// try{
+//     console.log('Runs Successfully');
+//     console.log(x);
+// }
+// catch{
+//     console.log("Error successfully");
+// }
+// finally{
+//     console.log("Finnaly");
+// }
+
+
+{
+    
 }
