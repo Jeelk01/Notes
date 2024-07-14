@@ -158,7 +158,7 @@
 // by the use of outerHtml we can change or replace the element itself also.
 
 
-// text cpntent
+// text content
 // for get only text content (another usecase : if we are visinting the other website and want copy only text content we can use this)
 
 

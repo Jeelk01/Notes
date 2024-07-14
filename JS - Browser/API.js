@@ -58,5 +58,5 @@
 
 // in JS engine 
 // fetch have special queue(micro task queue - priority queue - fetch queue) having a special priority.
-// first fetch then settieout then other work
+// first fetch then settimeout then other work.
 
