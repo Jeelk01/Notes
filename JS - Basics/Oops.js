@@ -23,133 +23,208 @@
 
 // When we try to read a property from a prototype and it's missing , JavaScript automatically takes it from the prototype.
 // This is called Prototypal Inheritance.
-{
-    let Object1 = {
-        greet : () =>{
-            console.log('Hello ! How are you ?');
-        },
-        details : () =>{
-            console.log('Hey Jeel.');
-        },
-    }
+// {
+//     let Object1 = {
+//         greet : () =>{
+//             console.log('Hello ! How are you ?');
+//         },
+//         details : () =>{
+//             console.log('Hey Jeel.');
+//         },
+//     }
 
-    let Object2 = {
-        Run : () => {
-            console.log('Hey i\'m Run Perfectly.');
-        },
-    }
+//     let Object2 = {
+//         Run : () => {
+//             console.log('Hey i\'m Run Perfectly.');
+//         },
+//     }
 
-    let Object3 = {
-        Digits : (n) => {
-            let digits = 0,num = n;
+//     let Object3 = {
+//         Digits : (n) => {
+//             let digits = 0,num = n;
 
-            while(num > 0 ){
-                digits++;
-                num = Math.floor(num/10);
-            }
+//             while(num > 0 ){
+//                 digits++;
+//                 num = Math.floor(num/10);
+//             }
 
-            console.log(`Total digits in ${n} is ${digits}.`);
-        }
-    }
+//             console.log(`Total digits in ${n} is ${digits}.`);
+//         }
+//     }
 
-    Object1.greet();
-    Object1.details();
-    // Object1.Run(); // here this wiil throw the error , as Run is not a fucntion inside the Object1.
+//     Object1.greet();
+//     Object1.details();
+//     // Object1.Run(); // here this wiil throw the error , as Run is not a fucntion inside the Object1.
 
 
-    // we have to set proto to use the fucntion inside the other object.
-    // if the method or fucntion is not present in object then it wil go for proto and check if available then executes.
-    // but first it check for own.
+//     // we have to set proto to use the fucntion inside the other object.
+//     // if the method or fucntion is not present in object then it wil go for proto and check if available then executes.
+//     // but first it check for own.
     
-    Object1.__proto__ = Object2;
-    Object1.Run();
+//     Object1.__proto__ = Object2;
+//     Object1.Run();
 
-    // we can make prototype of prototype also.
+//     // we can make prototype of prototype also.
 
-    Object2.__proto__ = Object3;
-    Object2.Digits(23425);
-    Object1.Digits(234543);
+//     Object2.__proto__ = Object3;
+//     Object2.Digits(23425);
+//     Object1.Digits(234543);
     
-}
+// }
 
 // ------------------------------ Classes & Objects ------------------------------
 
 // Classes are a template for creating objects.
 
+// {
+
+//     class RailwayForm {
+//         Submit(){
+//             if(this.name){
+//                 console.log(`${this.name} : Form Submited`);
+//             }else{
+//                 console.log(`First complete the all detailes.`);
+//             }
+//         };
+//         Cancel(){
+//             console.log('Form Canceled');
+//         };
+
+//         fill(Username){
+//             this.name = Username;
+//         }
+//         printname(){
+//             if(this.name){
+//             console.log(`name is ${this.name}.`);
+//             }else{
+//                 console.log(`Name haven't fill yet.`);
+//             }
+//         }
+//     }
+
+//     Jeel = new RailwayForm();
+//     Xyz = new RailwayForm();
+
+
+//     Jeel.fill('Jeel');
+//     Jeel.printname();
+//     Jeel.Submit();
+
+//     Xyz.printname();
+//     Xyz.Submit();
+
+// }
+
+// ------------------------------- Constructors -------------------------------
+// autometically invoked when object is created.
+// if we don't set any constructor then by default constructor is invoked.
+// There can only be one special method with the name "constructor" in a class
+// Syntax error is thrown if more that on econstructor method is appeare in class.
+
+// {
+//     class user{
+//         constructor(name,age){
+//             console.log(`New User created`);
+//             this.name = name;
+//             this.age = age;
+//         }
+
+//         // multiple constructor not allowed in one class.
+//         // constructor(name,age,Email){
+//         //     this.name = name;
+//         //     this.age = age;
+//         //     this.email = Email;
+//         // }
+
+//         SetUsername(Username){
+//             this.name = Username;
+//         }
+
+//         SetAge(Age){
+//             this.age = Age;
+//         }
+
+//         SetEmail(Email){
+//             this.email = Email;
+//         }
+//         PrintInfo(){
+//             console.log(`Name : ${this.name}`);
+//             console.log(`Age  : ${this.age}`);
+//             console.log(`Email: ${this.email}`);
+//         }
+//     }
+
+//     U1 = new user();
+//     U1.SetUsername('Jeel');
+//     U1.SetAge(18);
+//     U1.SetEmail('jk@gmail.com');
+//     U1.PrintInfo();
+
+//     // via constructor.
+//     try{
+//         U2 = new user('Xyz',19);
+//     }catch(error){
+//         console.log(`${error.name} : multip,le constructor not allowed`);
+//     }
+
+//     // if we set the parameters in constructr we can make some operations also.
+    
+// }
+
+
+// ------------------------------- Inheritance -------------------------------
+// Class inheritance is a way for one class to extend other class.
+// this is done by using extend keyword.
+// all method of other class and additional also.
+// we call constructor methood of parent class using ' super ' keyword.
+// Method Overloading
+// if we want the same method in childclass that is present in parent class , we can make it.
+// first prefenrence is going to that class. 
 {
-
-    class RailwayForm {
-        Submit(){
-            if(this.name){
-                console.log(`${this.name} : Form Submited`);
-            }else{
-                console.log(`First complete the all detailes.`);
-            }
-        };
-        Cancel(){
-            console.log('Form Canceled');
-        };
-
-        fill(Username){
-            this.name = Username;
+    class Animal{
+        constructor(AnimalName , AnimalColor){
+            this.name = AnimalName;
+            this.Color = AnimalColor;
+            console.log(`Name is set to : ${this.name}`);
+            console.log(`Color is set to : ${this.Color}`);
         }
-        printname(){
-            if(this.name){
-            console.log(`name is ${this.name}.`);
-            }else{
-                console.log(`Name haven't fill yet.`);
-            }
+
+        Bark(){
+            console.log(`${this.name} is barking.`);
+        }
+
+        Run(){
+            console.log(`${this.name} is running.`);
         }
     }
 
-    Jeel = new RailwayForm();
-    Xyz = new RailwayForm();
 
+    class Dog extends Animal{
+        constructor(AnimalName,AnimalColor){
+            super(AnimalName,AnimalColor);
+            // this.name = AnimalName;
+        }
 
-    Jeel.fill('Jeel');
-    Jeel.printname();
-    Jeel.Submit();
+        Loyalty(){
+            console.log(`${this.name} is great in loyalty.`);
+        }
 
-    Xyz.printname();
-    Xyz.Submit();
+        // now we declare same method available in parent class.
 
+        Run(){
+            console.log(`${this.name} is run behind , who tease them.`);
+        }
+    }
+
+    let Horse = new Animal('Shera','Brownish');
+    let D1 = new Dog('Pop','Grey');
+    Horse.Bark();
+    Horse.Run();
+    D1.Bark();
+    D1.Loyalty();
+    D1.Run();
+
+    // like this we can extend the class property for speacific chile classes.
 }
 
 // ------------------------------- Constructors -------------------------------
-// the constructor() method is called automatically by new , so we can initialize the object there.
-{
-    class user{
-        constructor(name,age){
-            console.log(`New User created`);
-            this.name = name;
-            this.age = age;
-        }
-
-        SetUsername(Username){
-            this.name = Username;
-        }
-
-        SetAge(Age){
-            this.age = Age;
-        }
-
-        SetEmail(Email){
-            this.email = Email;
-        }
-        PrintInfo(){
-            console.log(`Name : ${this.name}`);
-            console.log(`Age  : ${this.age}`);
-            console.log(`Email: ${this.email}`);
-        }
-    }
-
-    U1 = new user();
-    U1.SetUsername('Jeel');
-    U1.SetAge(18);
-    U1.SetEmail('jk@gmail.com');
-    U1.PrintInfo();
-    U2 = new user('Xyz',19);
-
-    // if we set the parameters in constructr we can make some operations also.
-    
-}

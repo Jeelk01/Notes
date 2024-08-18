@@ -203,7 +203,7 @@
 // node.after(e)            : Insert after the node.
 // node.replacewith(e)      : replace node with the given node.
 
-// -------------------- inserAdjacentHTML / text / element --------------------
+// -------------- inserAdjacentHTML / text / element --------------
 // 
 // element.insertAdjacentHTML("","");
 // first argumnet
@@ -212,12 +212,12 @@
 // afterbegin   : to add HTML just after the beginning of element
 // afterend     : to add HTML just after the end of element
 
-// ---------------------------------- Node Removal ----------------------------------
+// -------------------------- Node Removal --------------------------
 
 // element.remove();
 // to remove any node.
 
-// -------------------------------- Class name - Class list --------------------------------
+// --------------------- Class name - Class list ---------------------
 
 // we can change the class for the element
 // element.className = " ";
