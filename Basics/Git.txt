@@ -1,0 +1,36 @@
+Git
+
+A Distributed Version Control System
+Developed by Linus Torvalds ( Developer of Linux ) when he was working on the Linux kernal.
+
+Git Not Only Record the source code it also tracks the images , reseach papers or any types of file.
+
+--------------------
+How It Work
+--------------------
+
+1. Repository - Repo
+- A repo is a ddirectory containing all files and meta data git needs to track changes.
+
+2. Git states
+----------------------------------------------------------------------------------------------------
+1. Working directory (Modified State)
+-  Where we make changes to the file
+-  files that are modified by us are often called as Modified or Untracked.
+-  Modified  : file that exist in repo and have changed since the last commit.
+-  Untracked : New file that have not been added to git.
+----------------------------------------------------------------------------------------------------
+2. Staging Area 
+-  Middle layer : Prepare changes before commiting them to repo.
+-  Only changes that have been added to staging area included to next commit
+-  Also called as Index.
+----------------------------------------------------------------------------------------------------
+3. Commit      
+-  Commits are snapshots of project's state at a specifiv point of time.
+-  Each commit have unique SHA - 1 hash  ( Secure Hash Algorithm  - a cryptographic hash fuction )
+-  each hash contains 40 character
+----------------------------------------------------------------------------------------------------
+
+3. Branch
+- Branch is saperate version of your code
+- default branch is Main or master

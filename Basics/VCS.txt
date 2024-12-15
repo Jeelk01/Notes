@@ -1,0 +1,50 @@
+Version Control System - VCS
+
+- A tool that helps manage changes to source code or other files over time.
+- it is used by the developer to track modifications , collaborate on projects and maintain a history of changes.
+
+* Features *
+- Track changes
+- Collaboration
+- History Management
+- Braching & Merging
+
+----------------
+* Types of VCS *
+----------------
+1. Local VCS
+2. Centralized VCS
+3. Distribbuted VCS
+
+---------------------------------------------------------------------------
+1. Local VCS
+- Stores Changes Locally on a Devvlopers's Computer.
+- All changes and Versions are Stroed on single Computer.
+- Suitable for Single-Develper projects
+==> Advantages
+- Simple to use
+- Fast ( All operations are performed Locally )
+==> Disadvantages
+- lack of Collaboration
+---------------------------------------------------------------------------
+2. Centralized VCS
+- A central repository is maintained on a server.
+- Developers work on Local machines and sync their changes with the central server.
+==> Advantages
+- All versions are stored at single location
+- Collaborative
+- Access Control - ( Permissions Who can Access the Repository )
+==> Disadvantages
+- Singe Point failure : if server crash no one can access until it's recovery.
+---------------------------------------------------------------------------
+3. Distributed VCS
+- It provides a copy of the entire repository , including it's history to each developer's machine.
+- Developer can work independently and syncronize with others only when needed.
+==> Advantages
+- each developer have copy of Repository , Robust against server crash (Solution against the Server Crash.)
+- Collaboration
+==> Disadvantages
+- Complex
+- Storage
+---------------------------------------------------------------------------
+
