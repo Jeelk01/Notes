@@ -1,0 +1,120 @@
+* -- For Version  -- *
+* git --version
+
+* -- git Config  -- *
+* git config --list : Lists all configuration settings.
+* git config -l     : Lists all configuration settings.
+* --system  : Applies to all user on system
+* --global  : Applies to specific user
+* --Local   : Applies to current reository only.
+
+* git config --global user.name "Jeel Kalathiya" : Set up username globally
+* git config --global user.email "abc@gmail.com" : set up email globally
+* --unset   : for unnset the configuration value - Example : git config --global --unset user.name
+* --add     : Add new value for key without overwriting existing value
+* --get     : Retrieve vallue for spece
+
+* -- git add -- *
+* git add <filename>        : add file to staging area.
+* git add <file1> <file2>   : add multiple files to staging area
+* git add -A                : Add all Changes ( Modified , Deleted , Untracked ) for Repository
+* git add -all              : Add all Changes ( Modified , Deleted , Untracked )
+* git add .                 : Only Untracked and modified File of Current Directory.
+* git add -u                : Only stage modified and Deleted files of current Directory. ( not entire Repository )
+* git add --update          : Only stage modified and Deleted files of current Directory. ( not entire Repository )
+* git add -u :/             : all modified and deleted files in the entire repository will stage, regardless of where you are.
+* git add --refresh         : Refreshes the index without adding any files. Updates metadata if needed.
+* git add -f                : forces git to stage ingnored files ( .gitignore ) 
+
+* -- git commit -- *
+* git commit -m "Message"               : For commit   
+* git commit -a -m "Message"            : direct commit modified and deleted files.
+* git commit --amend --no-edit          : add current changes with last commit without changing commit message.
+* git commit --amend -m "New Message"   : add current changes with last commit with updating commit message.
+* git commit -C <Commit-hash>           : create a new commit with message of earlier commit
+* git commit -c <Commit-hash>           : can reference the commit message and also can edit that.
+
+* -- git log -- *
+* git log       : shows the commit history in reverse chronological order
+                        commit <Commit hash - 40 character> (HEAD -> <Branch name>)
+                        Author: user.name <user.email>
+                        Date:   Day Month Date hh:mm:ss year timezone
+                            <Commit Message>
+* git log --oneline : shows the commit history in one line each - <Commit hash - 7 char> <Commit Message>
+* git log --stat        : shows that which file is changed in commit with statistics
+* git log --name-only   : show the name of the file only that change in commit
+* git log --name-status : show the name of fille with status M - Modified files, A - Added files , D - Deleted files
+* git log --reverse     : Show commit in chronological order (oldest first)
+* git log -n <number>   : represent last number entry
+* git log --author="jeelk" : represent the log history of author jeelk
+* git log --grep="MessageContent" : display log history in which commit message containg "MessageContent"
+* git log --abbrev-commit : instead of full commit hase display abbreviated commit hash
+* git log -p            : display diff of each commit
+  git log --patch 
+* git log --all         : display the commmits from all branches
+* git log --skip=<number> : skip the number commits
+* git log --follow <file>: view chages to the perticular file even it's been renamed
+
+
+* -- git branch -- *
+* git branch                : list all branch ( * with current branch )
+* git branch -a // --all    : list both remote and local branch
+* git branch -r/--remotes   : list remote branches
+* git branch <branch-name>  : create a new branch with name
+* git checkout -b <branch-name> : Create a new and switch immediately 
+* git branch -d <branch-name>   : delete a branch that has been merged to current branch
+* git branch -D <branch-name>   : delete a branch even if it hasn't been merged.
+* git branch -m new-branch-name : rename the current branch
+* git branch -m old-branch-name new-branch-name : rename a branch not in one i'm 
+* git branch -v                 : show the last commit of each branch
+* git branch --contains <commit-id> : list branches that contains specific commit
+* git branch --merged           : list all branches that have been merged into main branch 
+* git branch --no-merged        : list all branches that have not been merged into main branch
+* git branch --column           : list all branch in display of column
+* git branch --edit-description <description> : to edit a discription of a branch
+* cat ./git/Head                : to check we are in which branch.
+
+
+
+* -- git stash -- * : Save all tracked, modified, and staged changes in a stash and revert the working directory to the last commit.
+* git stash push : same as git stash but more discriptive
+* git stash push -m "Message"   : stash with discriptive message.
+* git stash push -u             : include Untracked file to the stash
+* git stash push -a             : include Untracked and ignored files to the stash
+* git stath list                : Display stash list , index , description
+
+
+* -- git reset -- * : allows you to undo cahnges and manilpulate with repository state
+* git reset --soft [Commit]     : Undo commit but staged changes
+* git reset --mixed [commit]    : undo commit , unstage changes and keeps the changes in Working Directory
+                                  Default tag - if we don't write flag then by default mixed configuration is accepted
+* git reset --hard [commit]     : Completely undo commits and delete the changes permenantly
+* git reset <file_name>         : unstage changes for file from staging area while changes remains untouched
+
+
+* -- git revert -- *    : Remove the changes from commit but don't remove commit and add new commit. ( doesn't remove commit )
+* git revert [commit_id]    : revert the changes from commitid and creates a new commit
+* git revert <commmit1> <commit2> : revert the changes from multiple commit
+* git revert -e <commitid>  : revert the message with edit in commit messsage.
+  git revert --edit <commitid> 
+* git revert -n <commitid>  : revert the changes but doesn't commit them while keep chages to the working directory only
+  git revert --no-commit
+
+
+* -- git restore -- *
+* git restore file          : Discard the changes in working directory for file and get it to it's last commited state.
+* git restore .             : Discard all changes in working directory
+* git restore --staged file : unstage the file but keep changes  to the working directory
+* git restore --staged .    : for unstage all files
+* git restore --sorce=commit file   : restore file to the specific commit
+
+
+* -- git merge -- *
+A fast-forward merge occurs when the branch you're merging into (e.g., master) has no new commits since the branch you want to merge (e.g., feature) was created. In this case, Git simply moves the master branch pointer forward to the feature branch’s latest commit, without creating a merge commit.
+A non-fast-forward merge occurs when both branches have commits that aren’t shared. In this case, Git will create a merge commit to combine the changes from both branches.
+
+
+* git merge new_branch  : merge the branch to the current branch
+* git merge --no-ff featuer : merge feature branch without fast forwarding to the master
+* git merge --squash feature : combines all the commits from the feature branch into one single commit.
+* git merge --abort : abort the merge ( if you encounter the merge conflicts )

@@ -1,0 +1,43 @@
+GitHub
+
+GitHub is Web-Based platform used for version control , collaboration and software development.
+
+
+* Features *
+-  Version Control
+- Collaboration
+- Repository Hosting
+- Documentation
+- Open Source Community
+
+
+* UseCase *
+- Hosting Open Source projects
+- Collaborating on team-based software development
+
+
+
+* Git Vs GitHub *
+--------------------------------------------------------------------------------------------
+|                   Git                       |                    GitHub                  |
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+| A Distributed Version Control System        | A web-based Platform that built on top     |
+| that helps to track changes.                | of Git for hosting Repo and collaborating. |
+--------------------------------------------------------------------------------------------
+| A command line tool                         | Cloud based Service                        |
+--------------------------------------------------------------------------------------------
+| Used Locally to track and manage channges   | Used Remoteyl to host and Collaboration    |
+--------------------------------------------------------------------------------------------
+
+* Local Vs Remote *
+--------------------------------------------------------------------------------------------
+|                   Local                     |                    Remote                  |
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+| Stored On Local Machine                     | Stored on server or Cloud                  |
+--------------------------------------------------------------------------------------------
+| Can Only Accessible By You Locally          | Accessible by Multiple Collaborator        |
+--------------------------------------------------------------------------------------------
+| Works Offline                               | Requires internet for Pull/ Push Changes   |
+--------------------------------------------------------------------------------------------
