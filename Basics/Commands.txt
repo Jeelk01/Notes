@@ -12,7 +12,7 @@
 * git config --global user.email "abc@gmail.com" : set up email globally
 * --unset   : for unnset the configuration value - Example : git config --global --unset user.name
 * --add     : Add new value for key without overwriting existing value
-* --get     : Retrieve vallue for spece
+* --get     : Retrieve value for spece
 
 * -- git add -- *
 * git add <filename>        : add file to staging area.
@@ -110,11 +110,43 @@
 
 
 * -- git merge -- *
+creates a new merge commit that integrates the histories of both branches.
 A fast-forward merge occurs when the branch you're merging into (e.g., master) has no new commits since the branch you want to merge (e.g., feature) was created. In this case, Git simply moves the master branch pointer forward to the feature branch’s latest commit, without creating a merge commit.
 A non-fast-forward merge occurs when both branches have commits that aren’t shared. In this case, Git will create a merge commit to combine the changes from both branches.
 
 
 * git merge new_branch  : merge the branch to the current branch
-* git merge --no-ff featuer : merge feature branch without fast forwarding to the master
+* git merge --no-ff feature : merge feature branch without fast forwarding to the master
 * git merge --squash feature : combines all the commits from the feature branch into one single commit.
 * git merge --abort : abort the merge ( if you encounter the merge conflicts )
+
+
+* -- git reflog -- *
+* Reference log
+* Show the history of HEAD and branch movement
+* Including Commits , checkouts , resets , rebases
+* useful in recovering lost commits
+
+* git reflog show <branchname> : shows the reflog of specif branch
+* git reflog --all             : show the reflog of all branch
+* git reflog -n <value>        : limiting entries to be shown
+* git reflog --stat            : Show file changes ( similar to git diff --stat )
+* git reflog --oneline         : shows the reflog in oneline format
+* git reflog expire --expire=<time> : older that time all commits deletes( not from original commit but reflog is removed )
+* git reflig expire --expire-unreachable=<time> : remove unreachable oldder then specific time
+
+* -- git tag -- *
+*
+* Two types of tag
+* 1. Lightweighted tag : Just a pointer to commit
+* 2. Anonated Tag (with meta data : message , author , date)   
+
+* git tag v1.0.0          : Creating simple tag
+* git tag -a v1.0.0 -m "Desctiption" : Anonated tag
+* git tag                 : will display all the tags created
+* git show v1.0.0         : will display the content of the tag ( details )
+* git push origin v1.0.0  : will push specific tag to the remote repository.
+* git push origin --tags  : will push all the tag to the remote repository.
+* git tag -d v1.0.0       : delete perticular tag form local
+* git push origin --delete v1.0.0     : Delete tag from remote
+
