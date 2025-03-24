@@ -96,3 +96,21 @@ console.log(`Name : ${S1.Uname} , Email : ${S1.email} , Password : ${S1.password
     printName2();
 }
 
+
+
+const obj = {
+    name:"Jeel Kalathiya",
+    age:18,
+    subject: {
+        phsics: "Jenith",
+    }
+}
+
+const obj1 = {...obj};
+
+console.log(obj,obj1);
+obj.name = "Heelo"
+obj.subject.phsics = "abcds"
+
+
+console.log(obj,obj1);

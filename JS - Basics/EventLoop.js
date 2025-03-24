@@ -11,7 +11,7 @@
 // The event loop in Node.js is divided into several distinct phases, each with its own purpose and set of tasks:
 
 
-//         ┌───────────────────────────┐
+//         ┌──────────0────────────────┐
 //      ┌─>│           timers          │
 //      │  └─────────────┬─────────────┘
 //      │  ┌─────────────┴─────────────┐
@@ -50,40 +50,10 @@
 // 4. Poll
 // Most crucial phase.
 // Main phase of the event loop , where most of the I/O events are handled.
-// 
-
 
 // 5. Check
 
 // 6. Close Callbacks
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // console.log('Hey this is starting');
 // const fun2 = ()=>{
@@ -92,18 +62,16 @@
 
 // setTimeout(() => {
    
-//     console.log('--------------------Compelete first loop--------------------');
+// console.log('--------------------Compelete first loop--------------------');
 // },0);
 
 // const func = ()=>{
-
 // console.log('Start second Loop');
 // for(let i = 0 ; i < 23438893820 ; ++i){
 // // console.log();
 // }
 
 // console.log('End second loop');
-
 // console.log('End second loop');
 // console.log('End second loop');
 // console.log('End second loop');

@@ -10,7 +10,6 @@
 // Hiding the internal details
 
 // Encapsulation
-// 
 
 // inheritance
 // inherite the properties
@@ -122,7 +121,7 @@
 // Syntax error is thrown if more that on econstructor method is appeare in class.
 
 // {
-//     class user{
+//     class user {
 //         constructor(name,age){
 //             console.log(`New User created`);
 //             this.name = name;
@@ -166,9 +165,7 @@
 //     }catch(error){
 //         console.log(`${error.name} : multip,le constructor not allowed`);
 //     }
-
 //     // if we set the parameters in constructr we can make some operations also.
-    
 // }
 
 

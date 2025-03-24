@@ -205,7 +205,10 @@
 
 // -------------- inserAdjacentHTML / text / element --------------
 // 
-// element.insertAdjacentHTML("","");
+// element.insertAdjacentHTML("","");       // for adding HTML
+// element.insertAdjacentText("","");       // for adding text
+// element.insertAdjacentElement("","");    // for adding element
+
 // first argumnet
 // beforebegin  : to add HTML just before the beginning of element
 // beforeend    : to add HTML just before the end of element

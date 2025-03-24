@@ -7,7 +7,6 @@
 //  1. Primitive ( NNSSBBU )
 //  2. Object
 
-
 // Primitive Data type
 //      Number
 //      Null

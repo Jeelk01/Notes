@@ -12,7 +12,6 @@
 //      return; // optional
 // }
 
-
 // If multiple return is availabel then first one executed and remaining other not executed. (not reachable code).
 // we can directly assign value return by function to the variable.
 
@@ -28,7 +27,6 @@
 }
 
 // Function Expression
-
 {
     let add = function( a , b )
     {
@@ -45,7 +43,6 @@
 }
 
 // Arrow Function
-
 {
     let greet = function()
     {
@@ -63,7 +60,6 @@
 }
 
 // if function have only one statement then don't need to code inside the curly braces.
-
 {
     let add = (a,b) => a + b;
     console.log(add(2,3));
@@ -72,9 +68,7 @@
 // Constructure Function
 // if we want a model object using that we can creat more object with same property.
 // then constructor function is used.
-
-// Name the contructor function starts with capital letter.
-
+// Name the contructor function starts with capital letter( best Practice ).
 {
     function Student(name,college,cource)
     {
@@ -92,9 +86,7 @@
 
 // -------------------- IIFE --------------------
 // Immediatly Invoked Function Expressions
-
 // is a javaScrupt function that runs as soon as it is defined.
-
 // Syntax
 // (function(){
     // code to b executed.
