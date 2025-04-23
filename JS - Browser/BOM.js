@@ -33,6 +33,7 @@
 // clearInterval(timeId)
 // window.open()           :  
 // window.close()          :  
+// window.print()          : Print dialogue box opens up
 
 
 // ---------- 2. Navigator Object ----------
